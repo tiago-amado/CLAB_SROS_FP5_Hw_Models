@@ -1,0 +1,52 @@
+name: hw_models_FP5_SR-s
+
+### Example with all SR-s FP5 variants to be used as reference for other scenarios
+### It includes basic provisioning configs for a quick start
+### Please create your own endpoints, ensure you have a valid license and access to the registry
+
+
+topology:
+  nodes:
+    # OK
+    SR-1se:
+      kind: vr-sros
+      image: registry.srlinux.dev/pub/vr-sros:23.7.R1
+      type: >-
+        cp: cpu=4 ram=6 chassis=SR-1se slot=A card=cpm-1se ___ 
+        lc: cpu=4 ram=6 max_nics=10 chassis=SR-1se slot=1 card=imm36-800g-qsfpdd mda/1=ms36-800g-qsfpdd
+      license: ./r23_license.lic
+      startup-config: sr-s_configs/sr-1se_config.txt
+    # ok
+    SR-2se:
+      kind: vr-sros
+      image: registry.srlinux.dev/pub/vr-sros:23.7.R1
+      #type: "cp: cpu=2 ram=4 chassis=sr-2s slot=A sfm=sfm-2s card=cpm-2s ___ lc: cpu=2 ram=6 max_nics=34 chassis=sr-2s slot=1 sfm=sfm-2s card=xcm-2s mda/1=s18-100gb-qsfp28 ___ lc: cpu=2 ram=6 max_nics=34 chassis=sr-2s slot=2 sfm=sfm-2s card=xcm-2s mda/1=s36-100gb-qsfp28"
+      type: >-
+        cp: cpu=2 min_ram=4 chassis=sr-2se slot=A sfm=sfm-2se card=cpm-2se ___
+        lc: cpu=4 min_ram=8 max_nics=10 chassis=sr-2se slot=1 sfm=sfm-2se card=xcm-2se mda/1=x2-s36-800g-qsfpdd-18.0t ___
+        lc: cpu=4 min_ram=8 max_nics=10 chassis=sr-2se slot=2 sfm=sfm-2se card=xcm-2se mda/1=x2-s36-800g-qsfpdd-12.0t      
+      license: ./r23_license.lic
+      startup-config: sr-s_configs/sr-2se_config.txt
+    #OK - FP5 Ready: CPM2, SFM2 but with XCM-7s-b and XMA FP4
+    SR-7s:
+      kind: vr-sros
+      image: registry.srlinux.dev/pub/vr-sros:23.7.R1
+      type: >-
+        cp: cpu=4 ram=6 chassis=sr-7s slot=A sfm=sfm2-s card=cpm2-s ___ 
+        lc: cpu=4 ram=8 max_nics=10 chassis=sr-7s slot=1 sfm=sfm2-s card=xcm-7s-b mda/1=s36-100gb-qsfp28-3.6t ___
+        lc: cpu=4 ram=8 max_nics=10 chassis=sr-7s slot=2 sfm=sfm2-s card=xcm-7s-b xiom/x1=iom-s-3.0t mda/x1/1=ms2-400gb-qsfpdd+2-100gb-qsfp28 mda/x1/2=ms24-10/100gb-sfpdd
+      license: ./r23_license.lic
+      startup-config: sr-s_configs/sr-7s_config.txt
+    #Ok - Full FP5
+    SR-14s:
+      kind: vr-sros
+      image: registry.srlinux.dev/pub/vr-sros:23.7.R1
+      type: >-
+        cp: cpu=4 ram=6 chassis=sr-14s slot=A sfm=sfm2-s card=cpm2-s ___ 
+        lc: cpu=4 ram=8 max_nics=10 chassis=sr-14s slot=1 sfm=sfm2-s card=xcm2-14s mda/1=x2-s36-800g-qsfpdd-18.0t ___
+        lc: cpu=4 ram=8 max_nics=10 chassis=sr-14s slot=2 sfm=sfm2-s card=xcm2-14s mda/1=x2-s36-800g-qsfpdd-12.0t
+      license: ./r23_license.lic
+      startup-config: sr-s_configs/sr-14s_config.txt
+      
+  links:
+    - endpoints: ["SR-1se:eth1", "SR-1se:eth2"]

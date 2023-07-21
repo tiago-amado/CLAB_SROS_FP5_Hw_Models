@@ -1,0 +1,7 @@
+# sr-1-24d_config.txt
+configure exclusive
+system name FP5_sr-1-24d
+commit
+exit
+admin save
+#

@@ -1,0 +1,27 @@
+# sr-1se_config.txt
+configure exclusive
+    card 1 { }
+    card 1 { admin-state enable }
+    card 1 { card-type imm36-800g-qsfpdd }
+    card 1 { mda 1 }
+    card 1 { mda 1 admin-state enable }
+    card 1 { mda 1 mda-type ms36-800g-qsfpdd }
+    chassis router chassis-number 1 { }
+    chassis router chassis-number 1 { power-shelf 1 }
+    chassis router chassis-number 1 { power-shelf 1 admin-state enable }
+    chassis router chassis-number 1 { power-shelf 1 power-shelf-type ps-a4-shelf-dc }
+    chassis router chassis-number 1 { power-shelf 1 power-module 1 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 1 admin-state enable }
+    chassis router chassis-number 1 { power-shelf 1 power-module 1 power-module-type ps-a-dc-6000 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 2 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 2 admin-state enable }
+    chassis router chassis-number 1 { power-shelf 1 power-module 2 power-module-type ps-a-dc-6000 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 3 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 3 power-module-type ps-a-dc-6000 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 4 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 4 power-module-type ps-a-dc-6000 }
+    system { name "FP5_sr-1se" }
+commit
+exit
+admin save
+#

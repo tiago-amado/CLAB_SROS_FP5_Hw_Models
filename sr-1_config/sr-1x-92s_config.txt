@@ -1,0 +1,7 @@
+# sr-1x-92s_config.txt
+configure exclusive
+system name FP5_sr-1x-92s
+commit
+exit
+admin save
+#

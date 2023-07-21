@@ -1,0 +1,56 @@
+name: clab-hw_models_FP5_SR-1
+
+### Example with all 6 SR-1(x) FP5 variants to be used as reference for other scenarios
+### It includes basic provisioning configs for a quick start
+### Please create your own endpoints, ensure you have a valid license and access to the registry
+
+topology:
+  nodes:
+    #Ok
+    SR-1-24D:
+      kind: vr-sros
+      image: registry.srlinux.dev/pub/vr-sros:23.7.R1
+      type: "cp: cpu=2 ram=4 chassis=sr-1-24d slot=A card=cpm-1x ___ lc: cpu=2 ram=4 max_nics=34 chassis=sr-1-24d slot=1 card=i24-800g-qsfpdd-1 mda/1=m24-800g-qsfpdd-1"
+      license: ./r23_license.lic
+      startup-config: sr-1_config/sr-1-24d_config.txt
+    #Ok - CP Card must include CPM/IOM
+    SR-1-48D:
+      kind: vr-sros
+      image: registry.srlinux.dev/pub/vr-sros:23.7.R1
+      #type: "cp: cpu=2 ram=4 chassis=sr-1-48d slot=A card=cpm-1x ___ lc: cpu=2 ram=4 max_nics=34 chassis=sr-1-48d slot=1 card=i48-400g-qsfpdd-1 mda/1=m48-400g-qsfpdd-1"
+      type: "cp: cpu=2 ram=4 chassis=sr-1-48d slot=A card=cpm-1x/i48-400g-qsfpdd-1 ___ lc: cpu=2 ram=4 max_nics=34 chassis=sr-1-48d slot=1 card=i48-400g-qsfpdd-1 mda/1=m48-400g-qsfpdd-1"
+      license: ./r23_license.lic
+      startup-config: sr-1_config/sr-1-48d_config.txt
+    #Ok
+    SR-1x-48D:
+      kind: vr-sros
+      image: registry.srlinux.dev/pub/vr-sros:23.7.R1
+      type: "cp: cpu=2 ram=4 chassis=sr-1x-48d slot=A card=cpm-1x ___ lc: cpu=2 ram=4 max_nics=34 chassis=sr-1x-48d slot=1 card=i48-800g-qsfpdd-1x mda/1=m48-800g-qsfpdd-1x"
+      license: ./r23_license.lic
+      startup-config: sr-1_config/sr-1x-48d_config.txt
+
+    #Ok - CP Card must include CPM/IOM
+    SR-1-46S:
+      kind: vr-sros
+      image: registry.srlinux.dev/pub/vr-sros:23.7.R1
+      #type: "cp: cpu=2 ram=4 chassis=sr-1-46s slot=A card=cpm-1x ___ lc: cpu=2 ram=4 max_nics=34 chassis=sr-1-46s slot=1 card=i40-200g-sfpdd+6-800g-qsfpdd-1 mda/1=m40-200g-sfpdd+6-800g-qsfpdd-1"
+      type: "cp: cpu=2 ram=4 chassis=sr-1-46s slot=A card=cpm-1x/i40-200g-sfpdd+6-800g-qsfpdd-1 ___ lc: cpu=2 ram=4 max_nics=34 chassis=sr-1-46s slot=1 card=i40-200g-sfpdd+6-800g-qsfpdd-1 mda/1=m40-200g-sfpdd+6-800g-qsfpdd-1"
+      license: ./r23_license.lic
+      startup-config: sr-1_config/sr-1-46s_config.txt
+    #Ok - CP Card must include CPM/IOM
+    SR-1-92S:
+      kind: vr-sros
+      image: registry.srlinux.dev/pub/vr-sros:23.7.R1
+      type: "cp: cpu=2 ram=4 chassis=sr-1-92s slot=A card=cpm-1x/i80-200g-sfpdd+12-400g-qsfpdd-1 ___ lc: cpu=2 ram=4 max_nics=34 chassis=sr-1-92s slot=1 card=i80-200g-sfpdd+12-400g-qsfpdd-1 mda/1=m80-200g-sfpdd+12-400g-qsfpdd-1"
+      license: ./r23_license.lic
+      startup-config: sr-1_config/sr-1-92s_config.txt
+    #Ok - CP Card must include CPM/IOM
+    SR-1x-92S:
+      kind: vr-sros
+      image: registry.srlinux.dev/pub/vr-sros:23.7.R1
+      type: "cp: cpu=2 ram=4 chassis=sr-1x-92s slot=A card=cpm-1x/i80-200g-sfpdd+12-800g-qsfpdd-1x ___ lc: cpu=2 ram=4 max_nics=34 chassis=sr-1x-92s slot=1 card=i80-200g-sfpdd+12-800g-qsfpdd-1x mda/1=m80-200g-sfpdd+12-800g-qsfpdd-1x"
+      license: ./r23_license.lic
+      startup-config: sr-1_config/sr-1x-92s_config.txt
+
+  links:
+    - endpoints: ["SR-1-24D:eth1", "SR-1-24D:eth2"]

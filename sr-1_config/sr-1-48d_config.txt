@@ -1,0 +1,7 @@
+# sr-1-48d_config.txt
+configure exclusive
+system name FP5_sr-1-48d
+commit
+exit
+admin save
+#

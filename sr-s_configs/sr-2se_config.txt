@@ -1,0 +1,33 @@
+# sr-2se
+configure private
+card 1 { }
+card 1 { card-type xcm-2se }
+card 1 { mda 1 }
+card 1 { mda 1 mda-type x2-s36-800g-qsfpdd-18.0t }
+card 2 { }
+card 2 { card-type xcm-2se }
+card 2 { mda 1 }
+card 2 { mda 1 mda-type x2-s36-800g-qsfpdd-12.0t }
+chassis router chassis-number 1 { }
+chassis router chassis-number 1 { power-shelf 1 }
+chassis router chassis-number 1 { power-shelf 1 admin-state enable }
+chassis router chassis-number 1 { power-shelf 1 power-shelf-type ps-a4-shelf-dc }
+chassis router chassis-number 1 { power-shelf 1 power-module 1 }
+chassis router chassis-number 1 { power-shelf 1 power-module 1 admin-state enable }
+chassis router chassis-number 1 { power-shelf 1 power-module 1 power-module-type ps-a-dc-6000 }
+chassis router chassis-number 1 { power-shelf 1 power-module 2 }
+chassis router chassis-number 1 { power-shelf 1 power-module 2 admin-state enable }
+chassis router chassis-number 1 { power-shelf 1 power-module 2 power-module-type ps-a-dc-6000 }
+chassis router chassis-number 1 { power-shelf 1 power-module 3 }
+chassis router chassis-number 1 { power-shelf 1 power-module 3 admin-state enable }
+chassis router chassis-number 1 { power-shelf 1 power-module 3 power-module-type ps-a-dc-6000 }
+sfm 1 { }
+sfm 1 { sfm-type sfm-2se }
+sfm 4 { }
+sfm 4 { sfm-type sfm-2se }
+system { }
+system { name "FP5-SR-2se" }
+commit
+exit
+admin save
+#

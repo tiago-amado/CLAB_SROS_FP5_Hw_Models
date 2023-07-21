@@ -1,0 +1,57 @@
+# sr-7s
+configure private
+    card 1 { }
+    card 1 { admin-state enable }
+    card 1 { card-type xcm-7s-b }
+    card 1 { mda 1 }
+    card 1 { mda 1 admin-state enable }
+    card 1 { mda 1 mda-type s36-100gb-qsfp28-3.6t }
+    card 2 { }
+    card 2 { admin-state enable }
+    card 2 { card-type xcm-7s-b }
+    card 2 { mda 1 }
+    card 2 { xiom "x1" }
+    card 2 { xiom "x1" admin-state enable }
+    card 2 { xiom "x1" xiom-type iom-s-3.0t }
+    card 2 { xiom "x1" mda 1 }
+    card 2 { xiom "x1" mda 1 admin-state enable }
+    card 2 { xiom "x1" mda 1 mda-type ms2-400gb-qsfpdd+2-100gb-qsfp28 }
+    card 2 { xiom "x1" mda 2 }
+    card 2 { xiom "x1" mda 2 mda-type ms24-10/100gb-sfpdd }
+    chassis router chassis-number 1 { }
+    chassis router chassis-number 1 { power-shelf 1 }
+    chassis router chassis-number 1 { power-shelf 1 admin-state enable }
+    chassis router chassis-number 1 { power-shelf 1 power-shelf-type ps-a10-shelf-dc }
+    chassis router chassis-number 1 { power-shelf 1 power-module 1 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 1 admin-state enable }
+    chassis router chassis-number 1 { power-shelf 1 power-module 1 power-module-type ps-a-dc-6000 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 2 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 2 admin-state enable }
+    chassis router chassis-number 1 { power-shelf 1 power-module 2 power-module-type ps-a-dc-6000 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 3 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 3 admin-state enable }
+    chassis router chassis-number 1 { power-shelf 1 power-module 3 power-module-type ps-a-dc-6000 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 4 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 4 admin-state enable }
+    chassis router chassis-number 1 { power-shelf 1 power-module 4 power-module-type ps-a-dc-6000 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 5 }
+    chassis router chassis-number 1 { power-shelf 1 power-module 5 admin-state enable }
+    chassis router chassis-number 1 { power-shelf 1 power-module 5 power-module-type ps-a-dc-6000 }
+    sfm 1 { }
+    sfm 1 { admin-state enable }
+    sfm 1 { sfm-type sfm2-s }
+    sfm 2 { }
+    sfm 2 { admin-state enable }
+    sfm 2 { sfm-type sfm2-s }
+    sfm 3 { }
+    sfm 3 { admin-state enable }
+    sfm 3 { sfm-type sfm2-s }
+    sfm 4 { }
+    sfm 4 { admin-state enable }
+    sfm 4 { sfm-type sfm2-s }
+    system { }
+    system { name "FP5-SR-7s" }
+commit
+exit
+admin save
+#

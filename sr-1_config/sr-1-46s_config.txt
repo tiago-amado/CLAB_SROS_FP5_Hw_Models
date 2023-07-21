@@ -1,0 +1,7 @@
+# sr-1-46s_config.txt
+configure exclusive
+system name FP5_sr-1-46s
+commit
+exit
+admin save
+#
