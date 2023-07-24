@@ -12,8 +12,8 @@ You may simple use these files to build your own lab or clone these labs to your
 To deploy these labs, you should clone these labs to your server with "git clone".
 
 ```bash
-# change to your directory
-cd /home/user/github/
+# change to your home directory
+cd /home/user/
 # Clone the lab to your server
 git clone https://github.com/tiago-amado/CLAB_SROS_FP5_Hw_Models.git
 ```
