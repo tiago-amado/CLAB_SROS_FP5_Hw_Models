@@ -32,11 +32,17 @@ vi r23_license.lic
 ## SR-1 FP5 models
 
 This lab contains the six SR-1 FP5 variants:
+
 •	SR-1-24D
+
 •	SR-1-48D
+
 •	SR-1-46S
+
 •	SR-1-92S
+
 •	SR-1x-48D
+
 •	SR-1x-92S
 
 
@@ -54,9 +60,13 @@ clab deploy --topo hw_models_FP5_SR-1.yml
 ## SR-s FP5 models
 
 This lab contains the SR-s FP5 variants (SR-1Se/2Se/7/14):
+
 •	SR-1Se
+
 •	SR-2Se
+
 •	SR-7s (FP5 chassis with FP4 (xcm-7s-b))
+
 •	SR-14s (FP5 only)
 
 
