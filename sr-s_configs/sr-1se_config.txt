@@ -1,12 +1,3 @@
-﻿# TiMOS-C-23.3.R1 cpm/x86_64 Nokia 7750 SR Copyright (c) 2000-2023 Nokia.
-# All rights reserved. All use subject to applicable license agreements.
-# Built on Thu Mar 16 16:13:16 PDT 2023 by builder in /builds/c/233B/R1/panos/main/sros
-# Configuration format version 23.3 revision 0
-
-# Generated 2023-07-24T20:12:48.1+00:00 by admin from 172.31.255.29
-# Last modified 2023-07-24T20:12:12.3+00:00 by admin (MD-CLI) from 172.31.255.29
-# Last saved 2023-07-24T20:12:17.2+00:00 by admin from 172.31.255.29
-
 configure {
     card 1 {
         admin-state enable
@@ -394,8 +385,3 @@ configure {
         }
     }
 }
-
-
-# Finished 2023-07-24T20:12:48.2+00:00
-
-
