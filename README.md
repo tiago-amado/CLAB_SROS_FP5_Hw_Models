@@ -22,7 +22,11 @@ git clone https://github.com/tiago-amado/CLAB_SROS_FP5_Hw_Models.git
 ## License file
 
 SROS vSIMs require a valid license. You need to get a valid license from Nokia and place it in the "r23_license.lic" file.
-
+```bash
+# Copy/paste the license to the "r23_license.lic" file
+cd CLAB_SROS_FP5_Hw_Models/
+vi r23_license.lic
+```
 
 
 ## SR-1 FP5 models
@@ -32,6 +36,7 @@ This lab contains the six SR-1 FP5 variants. Use the comand below to deploy the 
 
 ```bash
 # deploy a lab
+cd CLAB_SROS_FP5_Hw_Models/
 clab deploy --topo hw_models_FP5_SR-1.yml
 ```
 
@@ -43,9 +48,21 @@ This lab contains the SR-s FP5 variants (SR-1Se/2Se/7/14). Use the comand below 
 
 ```bash
 # deploy a lab
+cd CLAB_SROS_FP5_Hw_Models/
 clab deploy --topo hw_models_FP5_SR-s.yml
 ```
 
+## Accessing the network elements
+
+Once the lab has been deployed, the different SROS nodes can be accessed via SSH through their management IP address, given in the summary displayed after the execution of the deploy command. 
+It is also possible to reach those nodes directly via their hostname, defined in the topology file. 
+
+```bash
+# List the containers
+clab inspect -a
+# reach a SROS node via SSH
+ssh admin@clab-clab-hw_models_FP5_SR-1-SR-1-24D
+```
 
 ## Conclusion
 
