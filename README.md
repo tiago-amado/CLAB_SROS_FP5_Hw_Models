@@ -3,7 +3,9 @@
 
 These CLAB yml files provides Nokia SROS FP5 Hw Models examples.
 These lab contains only examples and basic configs for a quick start playing with MD-CLI or to be used as reference for other lab setups with FP5 nodes.
-It is assumed that you're familiar with Container Lab and SROS vSIMs. Refer to https://containerlab.dev/
+It is assumed that you're familiar with Container Lab and SROS vSIMs. 
+
+Refer to https://containerlab.dev/
 
 
 ## Clone the git lab to your server
@@ -18,8 +20,41 @@ cd /home/user/
 git clone https://github.com/tiago-amado/CLAB_SROS_FP5_Hw_Models.git
 ```
 
+## SROS Image and License file
 
-## License file
+### SROS Image
+
+The SROS vSIMs image files are available under Nokia's internal registry. 
+If you don't have access to it, then you must get the SROS image and manually import them to CLAB following the instructions here: https://containerlab.dev/manual/vrnetlab/#vrnetlab
+
+The stepts are:
+```bash
+# Clone vrnetlab
+git clone https://github.com/hellt/vrnetlab && cd vrnetlab
+
+# Download qcow2 vSIM image from Nokia support portal (https://customer.nokia.com/support/s) or get one from your Nokia contact. 
+
+# Change name to “sros-vm-<VERSION>.qcow2”
+
+# Upload it to ‘vrnetlab/sros’ directory (e.g. /home/vrnetlab/sros)
+
+# Run ‘make docker-image’ to start the build process
+
+# Verify existing docker images
+
+docker images | grep -E "srlinux|vr-sros"
+```
+
+Note: After import the image, edit the yml file with the correct location.
+```bash
+# replace this 
+      image: registry.srlinux.dev/pub/vr-sros:23.7.R1
+# with this:
+      image: vrnetlab/vr-sros:23.7.R3
+```
+
+
+### License file
 
 SROS vSIMs require a valid license. You need to get a valid license from Nokia and place it in the "r23_license.lic" file.
 ```bash
